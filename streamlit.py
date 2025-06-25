@@ -28,7 +28,7 @@ with st.form("add_form"):
             
         
             if response.status_code == 200:
-                prediction = response.json().get("predicted_class", "No prediction returned")
+                prediction = response.json().get("predicted_class")
                 st.success(f"Predicted Credit Score: {prediction}")
             else:
                 st.error(f"API Error: {response.status_code}")
